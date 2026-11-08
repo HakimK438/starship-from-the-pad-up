@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-depth="general">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Starship from the pad up</title>
+<meta name="description" content="Stand at Starbase and follow one Starship flight in 3D: pad, liftoff, staging, orbit, re-entry and catch. Three depths: general, intermediate, detail.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,400..600&family=Inter+Tight:wght@600..900&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+<canvas id="gl" aria-label="3D view of Starship at Starbase"></canvas>
+<div id="veil"><span>Loading Starbase</span></div>
+
+<header class="bar">
+  <a class="brand" href="#hero">Starship, from the pad up</a>
+  <div class="depth" role="radiogroup" aria-label="Depth of explanation">
+    <button data-d="general" role="radio" aria-checked="true">General</button>
+    <button data-d="intermediate" role="radio" aria-checked="false">Intermediate</button>
+    <button data-d="detail" role="radio" aria-checked="false">Detail</button>
+  </div>
+  <button id="notes" class="ghost" title="Show or hide the notes (H)">Hide notes</button>
+  <div class="tools"><button id="sound" class="ghost">Sound: off</button><button id="quality" class="ghost">Graphics: auto</button></div>
+</header>
+
+<nav id="rail" class="rail" aria-label="Flight profile"></nav>
+<main id="story"></main>
+
+<aside class="hud" aria-live="off">
+  <p id="event"></p>
+  <dl>
+    <div><dt>Phase</dt><dd id="t-phase">On the pad</dd></div>
+    <div><dt>Clock</dt><dd id="t-time">–</dd></div>
+    <div><dt>Altitude</dt><dd id="t-alt">0 m</dd></div>
+    <div><dt>Speed</dt><dd id="t-spd">0 m/s</dd></div>
+    <div><dt id="t-qk">Dynamic pressure</dt><dd id="t-q">0 kPa</dd></div>
+    <div><dt>Thrust</dt><dd id="t-thr">–</dd></div>
+    <div><dt>Mass</dt><dd id="t-mass">–</dd></div>
+  </dl>
+</aside>
+<button id="stop" hidden>Stop auto-play</button>
+<div id="labels"></div>
+<div id="partcard" hidden></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Allow-list: only the website, the README and its screenshots are published.
+# The source PDFs, webcast screenshots and working notes in this folder are copyrighted
+# or private and must never be committed.
+/*
+!/.gitignore
+!/README.md
+!/site/
+!/docs/
